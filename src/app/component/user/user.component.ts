@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from '../../models/User';
+
 @Component({
     selector: 'app-user',
     templateUrl: './user.component.html',
@@ -10,6 +12,19 @@ import { Component } from '@angular/core';
 
 export class UserComponent {
     //properties
+    user: User;
+    //user: {
+    // firstName: string,
+    // lastName: string,
+    // age: number,
+    // address: {
+    //     street: string,
+    //     city: string,
+    //     province: string
+    // }
+
+    //}
+
     // firstName = 'Deivid';
     // lastName = 'Mafra';
     // age = 33;
@@ -18,76 +33,104 @@ export class UserComponent {
     //     city: 'Toronto',
     //     province: 'ON'
 
-    firstName: string;
-    lastName: string;
-    age: number;
-    address;
+    // // firstName: string;
+    // // lastName: string;
+    // // age: number;
+    // // address;
 
-    foo: any;
+    // // foo: any;
 
-    hasKids: boolean;
-    numberArray: number[];
-    stringArray: string[];
-    mixedArray: any[];
-    myTuple: [string, number, boolean];
-    unusable: void;
-    n: undefined;
-    u: null;
+    // // hasKids: boolean;
+    // // numberArray: number[];
+    // // stringArray: string[];
+    // // mixedArray: any[];
+    // // myTuple: [string, number, boolean];
+    // // unusable: void;
+    // // n: undefined;
+    // // u: null;
+
+
 
 
 
     constructor() {
-        this.firstName = 'Deivid';
-        this.lastName = 'Mafra';
-        this.age = 33;
-        this.address = {
-            street: '1101 Bay St',
-            city: 'Toronto',
-            province: 'ON'
 
+        this.user = {
+            firstName: 'Deivid',
+            lastName: 'Mafra',
+            age: 33,
+            address: {
+                street: '1101 Bay St',
+                city: 'Toronto',
+                province: 'ON'
+            }
+
+            // this.firstName = 'Deivid';
+            // this.lastName = 'Mafra';
+            // this.age = 33;
+            // this.address = {
+            //     street: '1101 Bay St',
+            //     city: 'Toronto',
+            //     province: 'ON'
+
+            // }
+            // this.foo = true;
+            // this.hasKids = true;
+            // this.numberArray = [1, 2, 3];
+            // this.stringArray = ['Hello', 'World'];
+            // this.mixedArray = [true, undefined, 'hello', 1, 0.20];
+            // this.myTuple = ['Deivid', 31, true];
+            // this.unusable = undefined;
+            // this.u = undefined;
+            // this.n = null;
+
+            // console.log(this.addNumber(2, 4));
+            // console.log(this.addNumber1(2, 4));
         }
-        this.foo = true;
-        this.hasKids = true;
-        this.numberArray = [1, 2, 3];
-        this.stringArray = ['Hello', 'World'];
-        this.mixedArray = [true, undefined, 'hello', 1, 0.20];
-        this.myTuple = ['Deivid', 31, true];
-        this.unusable = undefined;
-        this.u = undefined;
-        this.n = null;
 
-        console.log(this.addNumber(2, 4));
-        console.log(this.addNumber1(2, 4));
+        // showAge() {
+        //     return this.age;
+        // }
+
+        // addNumber(num1: number, num2: number): number {
+        //     return num1 + num2;
+        // }
+
+        // addNumber1(num1: number, num2: number): boolean {
+        //     return true;
+        // }
+
+
+        // //methods
+        // constructor() {
+        //     // console.log('Hello console...');
+        //     this.sayHello();
+        //     console.log(this.age);
+        //     this.hasBirthday();
+        //     console.log(this.age);
+
+        // }
+
+        // sayHello() {
+        //     console.log('Hello ' + this.firstName);
+        // }
+
+        // hasBirthday() {
+        //     this.age += 1;
+        // }
     }
-
-    showAge() {
-        return this.age;
-    }
-
-    addNumber(num1: number, num2: number): number {
-        return num1 + num2;
-    }
-
-    addNumber1(num1: number, num2: number): boolean {
-        return true;
-    }
-
-
-    // //methods
-    // constructor() {
-    //     // console.log('Hello console...');
-    //     this.sayHello();
-    //     console.log(this.age);
-    //     this.hasBirthday();
-    //     console.log(this.age);
-
-    // }
-
-    // sayHello() {
-    //     console.log('Hello ' + this.firstName);
-    // }
-
-    // hasBirthday() {
-    //     this.age += 1;
-    // }
 }
+
+// put it in a different file - model folder
+// interface User {
+
+//     firstName: string,
+//     lastName: string,
+//     age: number,
+//     address: {
+//         street: string,
+//         city: string,
+//         province: string
+//     }
+
+// }

@@ -7,6 +7,7 @@ export interface User {
         street: string,
         city: string,
         province: string
-    }
+    },
+    image?: string
 
 }

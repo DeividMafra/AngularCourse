@@ -49,10 +49,10 @@ export class UsersComponent implements OnInit {
         },
       ];
       this.loaded = true;
-    }, 5000);
+    }, 1000);
 
 
-    this.showExtended = false;
+    // this.showExtended = false;
 
     this.addUser({
       firstName: 'Alexander',

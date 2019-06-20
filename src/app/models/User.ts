@@ -9,5 +9,6 @@ export interface User {
         province: string
     },
     image?: string
+    isActive?: boolean
 
 }

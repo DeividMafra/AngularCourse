@@ -11,8 +11,6 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses = {};
-  currentStyles = {};
 
   constructor() { }
 
@@ -29,9 +27,9 @@ export class UsersComponent implements OnInit {
             city: 'Toronto',
             province: 'ON'
           },
-          image: 'http://lorempixel.com/600/600/people/3',
+
           isActive: true,
-          balance: 100,
+
           registered: new Date('01/02/2018 08:30:00')
 
         },
@@ -44,9 +42,9 @@ export class UsersComponent implements OnInit {
             city: 'Toronto',
             province: 'ON'
           },
-          image: 'http://lorempixel.com/600/600/people/2',
+
           isActive: false,
-          balance: 200,
+
           registered: new Date('03/11/2017 06:20:00')
         },
         {
@@ -58,16 +56,14 @@ export class UsersComponent implements OnInit {
             city: 'Toronto',
             province: 'ON'
           },
-          image: 'http://lorempixel.com/600/600/people/1',
+
           isActive: false,
-          balance: 50,
+
           registered: new Date('11/02/2016 10:20:00')
         },
       ];
       this.loaded = true;
 
-      this.setCurrentClasses();
-      this.setCurrentStyless();
     }, 1000);
 
 
@@ -87,21 +83,6 @@ export class UsersComponent implements OnInit {
   }
   addUser(user: User) {
     this.users.push(user);
-  }
-
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended
-    }
-  }
-
-  setCurrentStyless() {
-    this.currentStyles = {
-      'padding-top': this.showExtended ? '0' : '5px',
-      'font-size': this.showExtended ? '' : '40px'
-
-    }
   }
 
 }

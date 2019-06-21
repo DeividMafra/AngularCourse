@@ -10,7 +10,18 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = false;
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
+  showUserForm: boolean = false;
+  user: User = {
+    firstName: '',
+    lastName: '',
+    age: null,
+    address: {
+      street: '',
+      city: '',
+      province: ''
+    }
+  }
 
   constructor() { }
 
@@ -69,21 +80,26 @@ export class UsersComponent implements OnInit {
 
     // this.showExtended = false;
 
-    this.addUser({
-      firstName: 'Alexander',
-      lastName: 'Duck',
-      age: 28,
-      address: {
-        street: '3803 Younge St',
-        city: 'Toronto',
-        province: 'ON'
-      }
-    })
+  }
+  addUser() {
+    this.user.isActive = true;
+    this.user.registered = new Date();
 
+    this.users.unshift(this.user);
+
+    this.user = {
+      firstName: '',
+      lastName: '',
+      age: null,
+      address: {
+        street: '',
+        city: '',
+        province: ''
+      }
+    }
   }
-  addUser(user: User) {
-    this.users.push(user);
-  }
+  // push and unshift is almost equal -- push add at the end and unshift add in the beggining
+
 
   fireEvent(e) {
     // console.log('Button clicked');
@@ -93,5 +109,9 @@ export class UsersComponent implements OnInit {
   //   user.hide = !user.hide;
 
   // }
+
+  onSubmit(e) {
+    console.log(e.target.value);
+  }
 
 }

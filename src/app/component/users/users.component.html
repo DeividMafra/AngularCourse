@@ -1,11 +1,28 @@
-<h2>Users</h2>
+<button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">Add User</button>
+<div class="card card-body mb-3" *ngIf="showUserForm">
+  <h2>Add New User</h2>
+  <form (submit)="onSubmit($event)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" [(ngModel)]="user.firstName" class="form-control" name="firstName">
+      <!-- {{user.firstName}} string interpolation that show what I'm typing -->
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="user.lastName" class="form-control" name="lastName">
+      <label>Street</label>
+      <input type="text" [(ngModel)]="user.address.street" class="form-control" name="street">
+      <label>City</label>
+      <input type="text" [(ngModel)]="user.address.city" class="form-control" name="city">
+      <label>Province</label>
+      <input type="text" [(ngModel)]="user.address.province" class="form-control" name="province">
+      <label>Age</label>
+      <input type="number" [(ngModel)]="user.age" class="form-control" name="age">
+    </div>
 
-<!-- click
-mouseover
-mouseout
-mouseup -->
-<button (click)="addUser({firstName: 'Paul', lastName: 'James', isActive:true})" [disabled]="!enableAdd"
-  class="btn btn-block mb-3">Add New User</button>
+    <button (click)="addUser()" [disabled]="user.firstName =='' || user.lastName==''" class="btn btn-block mb-3">Add New
+      User</button>
+  </form>
+</div>
+
 <ul class="list-unstyled" *ngIf="loaded && users?.length >0">
 
   <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive">

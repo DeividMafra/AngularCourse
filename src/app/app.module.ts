@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './component/user/user.component';
 import { UsersComponent } from './component/users/users.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
+import { DataService } from './services/data.service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

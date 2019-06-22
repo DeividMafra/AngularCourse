@@ -60,12 +60,7 @@ export class UserComponent implements OnInit {
         this.user = {
             firstName: 'Deivid',
             lastName: 'Mafra',
-            age: 33,
-            address: {
-                street: '1101 Bay St',
-                city: 'Toronto',
-                province: 'ON'
-            }
+            email: 'deividmafra@hotmail.com'
 
 
         }

@@ -11,16 +11,11 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = false;
   loaded: boolean = false;
   enableAdd: boolean = false;
-  showUserForm: boolean = false;
+  showUserForm: boolean = true;
   user: User = {
     firstName: '',
     lastName: '',
-    age: null,
-    address: {
-      street: '',
-      city: '',
-      province: ''
-    }
+    email: ''
   }
 
   constructor() { }
@@ -32,27 +27,17 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Deivid',
           lastName: 'Mafra',
-          age: 33,
-          address: {
-            street: '1101 Bay St',
-            city: 'Toronto',
-            province: 'ON'
-          },
+          email: 'deividmafra@aol.com',
 
           isActive: true,
           registered: new Date('01/02/2018 08:30:00'),
-          hide: false
+          hide: true
 
         },
         {
           firstName: 'Mary',
           lastName: 'Thompson',
-          age: 30,
-          address: {
-            street: '2702 Bloor St',
-            city: 'Toronto',
-            province: 'ON'
-          },
+          email: 'mary@yahoo.com',
 
           isActive: false,
           registered: new Date('03/11/2017 06:20:00'),
@@ -61,12 +46,7 @@ export class UsersComponent implements OnInit {
         {
           firstName: 'Laura',
           lastName: 'Kawasaky',
-          age: 36,
-          address: {
-            street: '3803 Younge St',
-            city: 'Toronto',
-            province: 'ON'
-          },
+          email: 'laura@gmail.com',
 
           isActive: false,
           registered: new Date('11/02/2016 10:20:00'),
@@ -90,12 +70,7 @@ export class UsersComponent implements OnInit {
     this.user = {
       firstName: '',
       lastName: '',
-      age: null,
-      address: {
-        street: '',
-        city: '',
-        province: ''
-      }
+      email: ''
     }
   }
   // push and unshift is almost equal -- push add at the end and unshift add in the beggining

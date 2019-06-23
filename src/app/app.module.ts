@@ -10,6 +10,7 @@ import { UserService } from './services/user.service';
 import { PostService } from './services/post.service';
 import { from } from 'rxjs';
 import { PostsComponent } from './component/posts/posts.component';
+import { PostFormComponent } from './component/post-form/post-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PostsComponent } from './component/posts/posts.component';
     UsersComponent,
     NavbarComponent,
     PostsComponent,
+    PostFormComponent,
 
   ],
   imports: [

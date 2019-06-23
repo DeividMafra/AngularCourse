@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
-import { DataService } from '../../services/data.service';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class UsersComponent implements OnInit {
   @ViewChild('userForm') form: any;
   data: any;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: UserService) { }
 
   ngOnInit() {
     this.dataService.getData().subscribe(data => {

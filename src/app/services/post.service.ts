@@ -28,4 +28,10 @@ export class PostService {
     const url = `${this.postsUrl}/${post.id}`; //back ticks `url` crase em português. E6 template string. 
     return this.http.put<Post>(url, post, httpOptions);
   }
+
+  removePost(post: Post | number): Observable<Post> {
+    const id = typeof post === 'number' ? post : post.id;
+    const url = `${this.postsUrl}/${id}`;
+    return this.http.delete<Post>(url, httpOptions);
+  }
 }

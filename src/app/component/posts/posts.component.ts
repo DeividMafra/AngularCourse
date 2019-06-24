@@ -28,6 +28,18 @@ export class PostsComponent implements OnInit {
   onNewPost(post: Post) {
     this.posts.unshift(post);
   }
+  removePost(post: Post) {
+    if (confirm('Are you sure?')) {
+      this.postService.removePost(post.id).subscribe(() => {
+        this.posts.forEach((cur, index) => {
+          if (post.id === cur.id) {
+            this.posts.splice(index, 1);
+          }
+        });
+
+      })
+    }
+  }
 
   editPost(post: Post) {
     this.currentPost = post;
@@ -46,7 +58,7 @@ export class PostsComponent implements OnInit {
           body: ''
         }
       }
-    })
+    });
   }
 
 }

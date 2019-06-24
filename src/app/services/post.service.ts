@@ -23,4 +23,9 @@ export class PostService {
     return this.http.post<Post>(this.postsUrl, post, httpOptions);
 
   }
+
+  updatePost(post: Post): Observable<Post> {
+    const url = `${this.postsUrl}/${post.id}`; //back ticks `url` crase em português. E6 template string. 
+    return this.http.put<Post>(url, post, httpOptions);
+  }
 }
